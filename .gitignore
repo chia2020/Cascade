@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# API keys — NEVER commit
+.env
+
+# Generated test data (regenerate with: python cascade.py --setup)
+test_dump/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo

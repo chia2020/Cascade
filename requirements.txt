@@ -1,0 +1,28 @@
+# Cascade — Agentic Data Ingestion Pipeline
+# Requirements
+# Install: pip install -r requirements.txt
+
+# ─── Core LLM Providers ───────────────────────────────────────────
+google-generativeai>=0.8.0          # Gemini API (direct)
+langchain-google-genai>=2.0.0        # Gemini via LangChain
+
+openai>=1.0.0                        # OpenAI API
+langchain-openai>=0.2.0              # OpenAI via LangChain
+
+anthropic>=0.34.0                    # Anthropic Claude API
+langchain-anthropic>=0.2.0           # Claude via LangChain
+
+langchain-ollama>=0.2.0              # Ollama (local LLM, no API key)
+
+# ─── LangChain Core ───────────────────────────────────────────────
+langchain>=0.3.0                     # Core framework
+langchain-core>=0.3.0                # Messages, tools, prompts
+
+# ─── LangGraph (Agent Orchestration) ─────────────────────────────
+langgraph>=0.2.0                     # ReAct graph & state management
+
+# ─── MCP (Model Context Protocol) ────────────────────────────────
+mcp[cli]>=1.0.0                      # MCP base + CLI tools
+
+# ─── Utilities ────────────────────────────────────────────────────
+python-dotenv>=1.0.0                 # .env file loading
