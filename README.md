@@ -1,4 +1,4 @@
-# ⚡ Cascade — Agentic Data Ingestion Pipeline
+# Cascade — Agentic Data Ingestion Pipeline
 
 > **Enabled analytics on 50%+ of unutilized enterprise data by building an Agentic Data Ingestion Pipeline.**
 >
@@ -7,37 +7,37 @@
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ╔═══════════════════════════════════════════════════════════════════════╗
-║                   Cascade — Agentic Data Ingestion Pipeline            ║
+║                Cascade — Agentic Data Ingestion Pipeline              ║
 ╠═══════════════════════════════════════════════════════════════════════╣
-║                                                                         ║
-║   User Query                                                            ║
-║       │                                                                 ║
-║       ▼                                                                 ║
-║  ┌─────────────────────────┐         ┌──────────────────────────────┐  ║
-║  │    cascade.py           │         │     mcp_server.py            │  ║
-║  │  ─────────────────────  │         │   ──────────────────────     │  ║
-║  │  LangGraph ReAct Agent  │◄──MCP──►│   FastMCP Tool Server        │  ║
-║  │                         │  stdio  │                              │  ║
-║  │  1. OBSERVE             │   or    │  • list_files                │  ║
-║  │  2. ANALYZE             │   SSE   │  • read_file                 │  ║
-║  │  3. EXECUTE             │         │  • move_file                 │  ║
-║  │  4. SCHEMA              │         │  • get_file_metadata         │  ║
-║  │  5. RETRIEVE            │         │  • search_content            │  ║
-║  └─────────────────────────┘         │  • extract_schema ◄── NEW   │  ║
-║          │                           └──────────────────────────────┘  ║
-║          │                                         │                   ║
-║          ▼                                         ▼                   ║
+║                                                                       ║
+║   User Query                                                          ║
+║       │                                                               ║
+║       ▼                                                               ║
+║  ┌─────────────────────────┐         ┌──────────────────────────────┐ ║
+║  │    cascade.py           │         │     mcp_server.py            │ ║
+║  │  ─────────────────────  │         │   ──────────────────────     │ ║
+║  │  LangGraph ReAct Agent  │◄──MCP──►│   FastMCP Tool Server        │ ║
+║  │                         │  stdio  │                              │ ║
+║  │  1. OBSERVE             │   or    │  • list_files                │ ║
+║  │  2. ANALYZE             │   SSE   │  • read_file                 │ ║
+║  │  3. EXECUTE             │         │  • move_file                 │ ║
+║  │  4. SCHEMA              │         │  • get_file_metadata         │ ║
+║  │  5. RETRIEVE            │         │  • search_content            │ ║
+║  └─────────────────────────┘         │  • extract_schema ◄── NEW    │ ║
+║          │                           └──────────────────────────────┘ ║
+║          │                                         │                  ║
+║          ▼                                         ▼                  ║
 ║  ┌───────────────────────────────┐      ┌────────────────────┐        ║
 ║  │   LLM Provider (your choice)  │      │  Local Filesystem  │        ║
-║  │  ─────────────────────────── │      │  (test_dump/)      │        ║
-║  │  🟡 Gemini 2.0 Flash (free)  │      │                    │        ║
-║  │  🟢 Ollama / llama3 (local)  │      │  photo.jpg         │        ║
-║  │  🔵 OpenAI GPT-4o-mini       │      │  data.csv          │        ║
-║  │  🟣 Claude 3.5 Sonnet        │      │  finance_info.txt  │        ║
+║  │   ─────────────────────────── │      │  (test_dump/)      │        ║
+║  │      Gemini 2.0 Flash (free)  │      │                    │        ║
+║  │      Ollama / llama3 (local)  │      │  photo.jpg         │        ║
+║  │      OpenAI GPT-4o-mini       │      │  data.csv          │        ║
+║  │      Claude 3.5 Sonnet        │      │  finance_info.txt  │        ║
 ║  └───────────────────────────────┘      │  config.json  ...  │        ║
 ║                                         └────────────────────┘        ║
 ╚═══════════════════════════════════════════════════════════════════════╝
@@ -45,7 +45,7 @@
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 cascade/
@@ -60,7 +60,7 @@ cascade/
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Clone & Enter
 
@@ -111,7 +111,7 @@ cp .env.example .env
 
 ---
 
-## 🤖 LLM Provider Selection
+## LLM Provider Selection
 
 | Provider | Flag | Default Model | API Key Needed |
 |---|---|---|---|
@@ -145,7 +145,7 @@ python cascade.py --llm ollama --model llama3 --demo
 
 ---
 
-## ▶️ CLI Reference
+## CLI Reference
 
 ```
 python cascade.py [MODE] [LLM OPTIONS] [AGENT OPTIONS] [TRANSPORT OPTIONS]
@@ -206,7 +206,7 @@ python cascade.py \
 
 ---
 
-## 🛠️ MCP Tools Reference
+## MCP Tools Reference
 
 The `mcp_server.py` server exposes **6 tools** via FastMCP:
 
@@ -264,7 +264,7 @@ The `extract_schema` tool is the core deliverable — it converts an unstructure
 
 ---
 
-## 📝 Sample Agent Interaction
+## Sample Agent Interaction
 
 **Query:** `"Organize all the files and tell me the bank's SWIFT code"`
 
@@ -280,7 +280,7 @@ The `extract_schema` tool is the core deliverable — it converts an unstructure
   MCP Transport    : STDIO
 
 ─────────────────────────────────────────────────────────────────
-  🤖 Agent Reasoning Loop Starting...
+  Agent Reasoning Loop Starting...
 ─────────────────────────────────────────────────────────────────
 
 💭 Agent Thought:
@@ -338,7 +338,7 @@ The `extract_schema` tool is the core deliverable — it converts an unstructure
               finance signals detected, CSV column names extracted)
 
 ═══════════════════════════════════════════════════════════════
-  🎯 Final Response:
+Final Response:
 ═══════════════════════════════════════════════════════════════
 
 I've organized all 9 files into structured categories:
@@ -362,7 +362,7 @@ and is available via the extract_schema tool output.
 
 ---
 
-## 🌐 Network-Wide Scalability (SSE Transport)
+## Network-Wide Scalability (SSE Transport)
 
 Deploy the MCP server as a network service — any machine on your network can then connect agents to it:
 
@@ -389,7 +389,7 @@ This enables enterprise-scale deployment where a single MCP server can serve mul
 
 ---
 
-## ⚙️ Key Design Decisions
+## Key Design Decisions
 
 | Decision | Rationale |
 |---|---|
