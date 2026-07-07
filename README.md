@@ -1,9 +1,11 @@
 # Cascade — Agentic Data Ingestion Pipeline
 
-> **Enabled analytics on 50%+ of unutilized enterprise data by building an Agentic Data Ingestion Pipeline.**
->
-> Utilized **LangGraph** and **MCP** to contextually parse multi-format unstructured data silos, converting them into LLM-backed structured schemas.
-> Enabled cross-sector utility with a **CLI wrapper supporting local LLM inference** (Ollama) and **network-wide scalability** (SSE transport).
+This project is an **automated data ingestion pipeline** designed to unlock value from messy, unutilized corporate data. It automatically extracts, understands, and structures chaotic, multi-format files (like PDFs, logs, or emails) scattered across enterprise silos, turning them into clean, analytics-ready databases.
+
+## Core Features
+* **AI-Driven Parsing:** Uses autonomous agents (built with **LangGraph** and the Model Context Protocol) to contextually read unstructured documents and map them into strict, structured data schemas.
+* **Privacy & Local First:** Features a simple Command Line Interface (CLI) that supports local LLM inference via **Ollama**, ensuring sensitive enterprise data never leaves your infrastructure.
+* **Scalable Architecture:** Built with network-wide scalability in mind, using Server-Sent Events (SSE) transport to stream data efficiently across distributed environments.
 
 ---
 
